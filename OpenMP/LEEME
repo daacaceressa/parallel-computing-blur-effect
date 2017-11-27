@@ -1,0 +1,8 @@
+Para compilar es necesario tener instaladas las librerias OpenCV y omp.h
+Si se quieren generar las gráficas correspondientes, se debe tener Python 2.7 junto con las librerias Matplotlib y Numpy
+
+El script "script_ejecutar_todo.sh" necesita permisos de ejecucion.
+El script detecta todos los archivos con extensiones .jpg dentro de los directorios 720p, 1080p, 4K y aplica el programa BlurEffect sobre ellos.
+
+Los log de tiempo se muestran en los archivos 720p.txt, 1080p.txt y 4K.txt
+Las gráficas generadas con python para mostrar los resultados se guardan en en directorio Graphics, cada una con un nombre que especifica a que resolución pertenece, y si es la gráfica de tiempo o de speedup.
