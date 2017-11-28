@@ -30,7 +30,7 @@ def getGraphics( filename, fileSize ):
         plt.plot( threads, times[i], label = "Kernel " + str((i+1)*2+1) )
     plt.legend()
     #plt.show()
-    plt.savefig( "Graphics/" + fileSize + " time" )
+    plt.savefig( "../../graphics/CUDA/" + fileSize + " time" )
     plt.clf()
 
     plt.xticks( threads )
@@ -41,10 +41,10 @@ def getGraphics( filename, fileSize ):
         plt.plot( threads, speedUp[i], label = "Kernel " + str((i+1)*2+1) )
     plt.legend()
     #plt.show()
-    plt.savefig( "Graphics/" + fileSize + " speed up" )
+    plt.savefig( "../../graphics/CUDA/" + fileSize + " speed up" )
     plt.clf()
     return
 
-getGraphics("720p.txt", "720p" )
-getGraphics("1080p.txt", "1080p" )
-getGraphics("4K.txt", "4K" )
+getGraphics("../../logs/CUDA/720p.txt", "720p" )
+getGraphics("../../logs/CUDA/1080p.txt", "1080p" )
+getGraphics("../../logs/CUDA/4K.txt", "4K" )

@@ -7,17 +7,17 @@ directories='720p 1080p 4K'
 g++ BlurEffect.cpp -o BlurEffect `pkg-config opencv --libs` -fopenmp
 for dir in $directories
 do
-	rm -f $dir.txt
-	touch $dir.txt
-	echo -e File '\t\t\t' Kernel '\t\t\t' Threads '\t\t\t' Time'('s')' >> $dir.txt
-	for filename in $dir/*.jpg;
+	rm -f ../../logs/OpenMP/$dir.txt
+	touch ../../logs/OpenMP/$dir.txt
+	echo -e File '\t\t\t' Kernel '\t\t\t' Threads '\t\t\t' Time'('s')' >> ../../logs/OpenMP/$dir.txt
+	for filename in ../../images/$dir/*.jpg;
 	do
 		for kernel in $kernels
 		do
 			for thread in $threads
 			do
 				echo Running program with $filename, kernel size = $kernel and $thread thread'('s')'
-				./BlurEffect "$filename" "$kernel" "$thread" >> $dir.txt
+				./BlurEffect "$filename" "$kernel" "$thread" >> ../../logs/OpenMP/$dir.txt
 			done
 		done
 	done

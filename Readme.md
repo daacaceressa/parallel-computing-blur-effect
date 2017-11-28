@@ -12,9 +12,9 @@ If you also want to generate the corresponding graphics, then `Python 2.7` or hi
 
 Usage
 -------------
-Set your terminal to the directory that you want to run (POSIX, CUDA, OpenMP), once inside you should give execution permits to the file `script_ejecutar_todo.sh` and run it.
+Set your terminal to the directory that you want to run (POSIX, CUDA, OpenMP) inside the folder `src`, once inside you should give execution permits to the file `script_ejecutar_todo.sh` and run it.
 
-The script will detect all files with extension `.jpg`  inside the directories 720p, 1080p, 4K and will apply the blur effect over them.
+The script will detect all files with extension `.jpg`  inside the directories 720p, 1080p, 4K inside the folder `images` and will apply the blur effect over them.
 
-Time logs will be in the files `720p.txt`, `1080p.txt` and `4K.txt`.
-Graphics generated with the file `GraphicsGenerator.py` will be stored at the directory Graphics and will have as name the resolution it belongs to and if it is of time or of speed up.
+Time logs will be in the files `720p.txt`, `1080p.txt` and `4K.txt` inside the folder `logs`.
+Graphics generated with the file `GraphicsGenerator.py` will be stored at the folder `graphics` and will have as name the resolution it belongs to and if it is of time or of speed up.
