@@ -15,35 +15,6 @@ int h_in[ 3 * MAX_ROW * MAX_COL ];
 int h_out[ 3 * MAX_ROW * MAX_COL ];
 int size;
 
-/*void getNewPixel( int row, int col, int totalRow, int totalCol ){
-    //Calculate the value of the pixel [row][col]
-    int newColor[3]; newColor[0] = newColor[1] = newColor[2] = 0;
-    for( int i = row - kernelSize/2; i <= row + kernelSize/2; ++i ){
-        for( int j = col - kernelSize/2; j <= col + kernelSize/2; ++j ){
-            for( int k = 0; k < 3; ++k ) {
-                newColor[k] +=  h_in[ k ][ (i+totalRow)%totalRow ][ (j+totalCol)%totalCol ];
-            }
-        }
-    }
-
-    //Store it as the variable of a pixel
-    for( int k = 0; k < 3; ++k ) {
-        h_out[k][row][col] = newColor[k] / (kernelSize*kernelSize);
-    }
-}*/
-
-/*void blur(){
-    newImage = Mat(image.rows, image.cols, CV_8UC3);
-    int j;
-    omp_set_num_threads( numberOfThreads );
-    #pragma omp parallel for
-        for( j = 0; j < image.rows; ++j ){
-            for( int i = 0; i < image.cols; ++i ){
-                getNewPixel( j, i, image.rows, image.cols );
-            }
-        }
-    
-}*/
 
 __global__ void blur( int * d_in, int * d_out, int rowsPerThread, int totalRow, int totalCol, int kernelSize ){
     int fr = rowsPerThread * (blockDim.x * blockIdx.x + threadIdx.x);
